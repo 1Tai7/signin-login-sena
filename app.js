@@ -11,6 +11,10 @@ let validPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; // Mínimo 8 carac
 
 const form = document.getElementById("stayUpdatedForm");
 
+const openModal = document.querySelector(".subscribe");
+const modal = document.querySelector(".modal");
+const closeModal = document.querySelector("#dismiss");
+
 document.getElementById("email").addEventListener("change", (event) => {
   email = event.target.value;
 });
@@ -20,9 +24,11 @@ document.getElementById("password").addEventListener("change", (event) => {
 
 form.addEventListener("submit", function (event) {
   event.preventDefault(); // Evita que el formulario se envíe
-
+  alert("hola");
   let emailErrorMessage = [];
+  console.log(emailErrorMessage);
   let passwordErrorMessage = [];
+  console.log(passwordErrorMessage);
 
   // Validación del correo electrónico
   if (!email || !validEmail.test(email)) {
@@ -51,18 +57,18 @@ form.addEventListener("submit", function (event) {
   passwordError.innerHTML = passwordErrorMessage; // Muestra el error de la contraseña
 
   // Continuar si no hay errores
-  if (!emailErrorMessage && !passwordErrorMessage) {
+  console.log(emailErrorMessage.length);
+  console.log(passwordErrorMessage);
+
+  if (emailErrorMessage.length === 0 && passwordErrorMessage.length === 0) {
     modal.classList.add("modal--show"); // Muestra el modal si no hay errores
   }
 });
-
-const openModal = document.querySelector(".subscribe");
-const modal = document.querySelector(".modal");
-const closeModal = document.querySelector("#dismiss");
 
 closeModal.addEventListener("click", (e) => {
   e.preventDefault();
   emailInput.value = "";
   passwordInput.value = "";
   modal.classList.remove("modal--show");
+  location.href = "./signup.html";
 });
