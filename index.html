@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  <link rel="stylesheet" href="./Styles.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+  </style>
+
+</head>
+
+<body>
+  <section>
+    <div class="container-left">
+      <h1>Registro</h1>
+      <form id="stayUpdatedForm">
+        <div>
+          <div class="label-container bold"><label for="email">Usuario
+            </label>
+            <div class="error" id="emailError"></div>
+          </div>
+          <input name="email" type="text" class="email" id="email" placeholder="email@company.com">
+        </div>
+
+        <div>
+          <div class="label-container bold"><label for="email">Contraseña
+            </label>
+            <div class="error" id="passwordError"></div>
+          </div>
+          <input name="password" type="password" class="email" id="password" >
+        </div>
+        <button class="subscribe" type="submit">Registrarse</button>
+
+      </form>
+
+    </div>
+
+  </section>
+  <footer>
+    <p>Proyecto SENA</a>.
+      Codigo por: <a href="https://github.com/1Tai7">Ilce Garcia</a></p>
+  </footer>
+
+  <section class="modal">
+    <div class="modal-container">
+      <img src="./assets/images/icon-success.svg" alt="icon-success">
+      <h2>Te has registrado con exito!</h2>
+     
+      <button class="dismiss" id="dismiss" type="submit">Cerrar Mensaje</button>
+    </div>
+  </section>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
